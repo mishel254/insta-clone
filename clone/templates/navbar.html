@@ -1,0 +1,23 @@
+{% load static%}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<nav class="navbar">
+  <a class="navbar-brand" href="#"><h1>Instagram</h1></a>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="search" aria-label="Search"> <i class="fa fa-search" aria-hidden="true"></i>
+      
+    </form>
+    <div class="services">
+      <i class="fa fa-home" aria-hidden="true"></i>
+      <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+      <i class="fa fa-compass" aria-hidden="true"></i>
+      <i class="fa fa-heart-o" aria-hidden="true"></i>
+    </div>
+</nav>
+<hr>
+{% endblock %}
