@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static%}
+{% load bootstrap4 %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/interface.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col">
+        <header class="div">
+            <p>hello</p>
+        </header>
+        <div class="image div">
+            <p>hello</p>
+        </div>
+        <div class="interactive div">
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i class="fa fa-comment-o" aria-hidden="true"></i>
+            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+            <i class="fa fa-bookmark-o" aria-hidden="true" style="float:right;margin:10px"></i>
+        </div>
+        <div class="caption div">
+            <form>
+                <input type="text" placeholder="leave a comment"><span style="float:right;margin:10px">Post</span>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
