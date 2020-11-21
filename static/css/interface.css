@@ -1,0 +1,18 @@
+.col{
+    margin: auto;
+}
+.div{
+    width:600px;
+    border:1px solid black;
+}
+header{
+    height:35px;
+}
+
+.image{
+    height: 400px;
+}
+
+.interactive{
+    height: 35px;
+}
