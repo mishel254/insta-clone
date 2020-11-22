@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
-{% load static%}
 {% load bootstrap4 %}
+{% load static%}
+{% load cloudinary%}
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/interface.css' %}">
+{% bootstrap_css %}
 {% endblock %}
 {% block content %}
 <div class="container">
-    <div class="col">
+    <div class="row">
+  {% for post in posts%}
+    <div class="col main">
         <header class="div">
-            <p>hello</p>
+            <p>{{post.username }}</p>
         </header>
         <div class="image div">
             <p>hello</p>
@@ -25,6 +29,14 @@
             </form>
 
         </div>
+    </div>
+    <div class="col sidebar">
+        <div class="profile"></div>
+        <div class="suggetstion">
+            <p>suggetstion</p>
+        </div>
+    </div>
+    {% endfor %}
     </div>
 </div>
 
