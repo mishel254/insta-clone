@@ -1,10 +1,5 @@
-.main{
-    width:500px;
-}
-.col{
-    margin: auto;
-}
-.div{
+
+col{
     border:1px solid black;
 }
 
@@ -21,6 +16,15 @@ header{
 }
 
 .sidebar{
-    width:200px;
     box-shadow: 2px 2px 2px 2px rgba(51, 51, 51, 0.486);
+}
+
+.image img{
+    width:50%;
+    height: 199px;
+    object-fit: contain;
+}
+
+.main{
+    background-color: cornflowerblue;
 }

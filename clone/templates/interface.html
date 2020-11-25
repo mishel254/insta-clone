@@ -7,37 +7,60 @@
 {% bootstrap_css %}
 {% endblock %}
 {% block content %}
-<div class="container">
+<div class="container" style="justify-content: space-around;width:950px;">
+
     <div class="row">
-  {% for post in posts%}
-    <div class="col main">
-        <header class="div">
-            <p>{{post.username }}</p>
-        </header>
-        <div class="image div">
-            <p>hello</p>
-        </div>
-        <div class="interactive div">
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
-            <i class="fa fa-comment-o" aria-hidden="true"></i>
-            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-            <i class="fa fa-bookmark-o" aria-hidden="true" style="float:right;margin:10px"></i>
-        </div>
-        <div class="caption div">
-            <form>
-                <input type="text" placeholder="leave a comment"><span style="float:right;margin:10px">Post</span>
-            </form>
+        <div class="col">
+            {% for post in posts %}
+            
+            <div class="cols"  style="width:600px;border:1px solid grey;margin-bottom: 20px;">
+                <header class="div" style="height: 45px">
+                   <span style="display:inline-block;margin:5px"><img src="{{user.display_photo.url }}" style="height:40px;width:40px;border-radius: 100%;"></span> 
+                   <p style="display:inline-block">{{post.username }}</p>
+                </header>
+                <div class="image">
+                    
+                    <img src="{{post.photo.url }}" style="width:100%;object-fit: cover;height:100%">
+                </div>
+                <div class="interactive div">
+                   <button  class="like"> <i class="fa fa-heart-o" aria-hidden="true"></i></button>
+                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                    <i class="fa fa-bookmark-o" aria-hidden="true" style="float:right;margin:10px"></i>
+                </div>
+                <div class="caption div">
+                    <p>  <span style="font-weight: 700;"> {{post.username}}</span>  {{post.caption}}</p>
+                    <p>{{post.followers }}</p>
+                    <form>
+                        <input type="text" placeholder="leave a comment" style="border:0px;width:80%">
+                        <button style="float:right;margin:10px;border:none;">Post</button>
+                    </form>
 
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+        <div class="cols" style="width:300px">
+            <div class="col sidebar">
+                <div class="profile"></div>
+                <div class="suggetstion">
+                    <p>suggetstion for you</p>
+                    {% for post in posts %}
+                    <ul>
+                        <li style="list-style-type: none;"><img src="{{post.photo.url }}" style="height:40px;width:40px;border-radius: 100%;">  {{post.username}} <button style="color:blue;border:0px;float:right;margin-right: 5px; background-color: white;">Follow</button></li>
+                    </ul>
+                     
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col sidebar">
-        <div class="profile"></div>
-        <div class="suggetstion">
-            <p>suggetstion</p>
-        </div>
-    </div>
-    {% endfor %}
-    </div>
+
+
 </div>
-
+{% block scripts %}
+ {{block.super}}
+  <script type="text/javascript" src="{%static 'js/app.js'%}"></script>
+{% endblock %}
 {% endblock %}

@@ -6,5 +6,6 @@ from . import views
 
 urlpatterns = [
     path('',views.welcome, name='welcome'),
-    path('instagram',views.instagram, name='interface')
+    path('instagram',views.instagram, name='interface'),
+    path('profile',views.profile, name='profile')
 ]

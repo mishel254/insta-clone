@@ -93,7 +93,7 @@ if config('MODE')=="dev":
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'insta',
+        'NAME': 'gramss',
         'USER':'moringa',
         'PASSWORD':'password'
     }
