@@ -42,6 +42,10 @@ class Post(models.Model):
     photo = CloudinaryField('image')
     caption = models.CharField(max_length=255)
     username=models.ForeignKey(Bio,max_length=255,on_delete=models.CASCADE)
+    likes =models.ManyToManyField(Users,related_name='imagepost_like')
+
+    def like(self):
+        return self.likes
     
 
 

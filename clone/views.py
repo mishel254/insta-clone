@@ -15,3 +15,6 @@ def profile(request):
     username =  User.objects.all()
     context = {'username':username}
     return render(request,'profile.html',context)
+
+
+
