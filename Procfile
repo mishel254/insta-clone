@@ -1,1 +1,1 @@
-web: gunicorn minstaclone.wsgi --log-file -
+web: gunicorn instagram.wsgi --log-file -
