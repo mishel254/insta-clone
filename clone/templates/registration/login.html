@@ -1,0 +1,41 @@
+{%extends "registration/base.html"%}
+{% load static %}
+{% load bootstrap4 %}
+{% block styles %}
+{% bootstrap_css%}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="col-md">
+   {% for message in messages %}
+   <p> {{ message}}</p>
+   {% endfor%}
+
+            <form action="" method="post">
+                <h3 class="text-center">Login</h3>
+                {% csrf_token %}
+                <div class="form-group">
+                    <span> {{form.username.label}}: </span>
+                    {{form.username}}
+                </div>
+                <div class="form-group">
+                    <span> {{form.password1.label}}: </span>
+                    {{form.password1}}
+                </div>
+               
+                 
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-sm" value="login">
+                </div>
+
+                <input type="hidden" name="next" value="{{next}}">
+                <span>Don't have an account <a href ="{%url 'clone:signin' %}">sign up</a></span>
+               
+            </form>
+</div>
+</div>
+
+{% endblock %}
