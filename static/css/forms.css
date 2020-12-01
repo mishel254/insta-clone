@@ -1,0 +1,22 @@
+form{
+    box-shadow:2px  2px 2px 2px  black;
+    margin: 50px auto;
+    background-color:#0A1B4A;
+    border-radius: 20px;
+    padding:20px;
+    width:80%;
+    padding-bottom:60px ;
+    color:white
+}
+
+input{
+    width:90%
+}
+
+.btn{
+    width:20%;
+    float:right;
+}
+span{
+    display: block;
+}
